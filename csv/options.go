@@ -14,7 +14,7 @@ type Option func(*Scanner)
 // and https://golang.org/pkg/encoding/csv/#ParseError
 // for more information regarding possible error values.
 func ContinueOnError(continue_ bool) Option { return func(s *Scanner) { s.continueOnError = continue_ } }
-func Comma(comma rune) Option               { return func(s *Scanner) { s.reader.Comma = comma } }
+func Comma(comma rune) Option               { return func(s *Scanner) { s.reader.Comma = '\t' } }
 func Comment(comment rune) Option           { return func(s *Scanner) { s.reader.Comment = comment } }
 func FieldsPerRecord(fields int) Option     { return func(s *Scanner) { s.reader.FieldsPerRecord = fields } }
 func LazyQuotes(lazy bool) Option           { return func(s *Scanner) { s.reader.LazyQuotes = lazy } }
